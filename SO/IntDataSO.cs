@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,14 +5,15 @@ using UnityEngine.Events;
 public class IntDataSO : ScriptableObject
 {
     public int value;
-
+    
+    public UnityEvent disableEvent;
 
     public void SetValue(int num) 
     {
         value = num;
     }
 
-    public void CompareValue(IntData obj) 
+    public void CompareValue(IntDataSO obj) 
     {
         if (value >= obj.value) 
         {
@@ -25,7 +24,7 @@ public class IntDataSO : ScriptableObject
             value = obj.value;
         }
     }
-    public void SetValue(IntData obj) 
+    public void SetValue(IntDataSO obj) 
     {
         value = obj.value;
     }
@@ -35,5 +34,5 @@ public class IntDataSO : ScriptableObject
         value += num;
     }
 
-    
+   
 }
